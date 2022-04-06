@@ -4,9 +4,9 @@ NodeJS install https://nodejs.org/en/
 
 ## To start
 
-```npm i```
+```npm i```. загрузка зависимостей
 
-```npm start```
+```npm start``` запуск приложения
 
 ## Available Scripts
 
