@@ -2,6 +2,11 @@
 
 NodeJS install https://nodejs.org/en/
 
+## To start
+
+npm i
+npm start
+
 ## Available Scripts
 
 In the project directory, you can run:
