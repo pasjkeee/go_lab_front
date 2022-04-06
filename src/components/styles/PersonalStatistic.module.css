@@ -1,0 +1,100 @@
+.container {
+  width: 24rem;
+  background-color: #292E33;  
+  padding: 4rem 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: aliceblue;
+  display: flex;
+  padding-left: 3rem;
+  margin-top: 1rem;
+}
+
+.infoCard {
+  margin-top: 1rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 30px);
+  background: linear-gradient(180deg, #679CF6 0%, #4072EE 100%);
+}
+
+.titleCard {
+  justify-self: start;
+  align-self: center;
+  font-size: 1.1rem;
+  color: #ffffff80;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
+}
+
+.valueCard {
+  justify-self: start;
+  align-self: center;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
+}
+
+.walletContainer {
+  max-height: 50vh;
+  overflow: scroll;
+}
+
+.wallet {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.wallet:hover {
+  opacity: 0.8;
+}
+
+.walletId,
+.walletEth,
+.walletGas {
+  display: flex;
+}
+
+.walletTitle {
+  width: 50%;
+  text-align: start;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.5rem;
+}
+
+.walletValue {
+  width: 50%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.transactionsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.transactonTitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.transactonValue {
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.3rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btnTitle {
+  
+}

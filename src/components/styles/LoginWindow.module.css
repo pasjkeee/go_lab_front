@@ -1,0 +1,12 @@
+.container {
+  padding-top: 10rem;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper {
+  background-color: #292E33;
+  min-height: 100vh;
+}
+

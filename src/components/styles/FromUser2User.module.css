@@ -1,0 +1,71 @@
+.container {
+  width: 53%;
+  background: #292E33;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  margin-left: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: aliceblue;
+  display: flex;
+  width: 100%;
+  height: 1rem;
+}
+
+.payContainer {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.pretitle {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.3rem;
+  margin-top: 1rem;
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+}
+
+.button {
+  margin-top: 2rem;
+  max-width: 34rem;
+}
+
+.walletContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wallet {
+  width: 18rem;
+  text-align: start;
+  display: inline-block;
+}
+
+.dropdown {
+  width: 20rem !important;
+}
+
+.dropdown button {
+  display: inline-block;
+  width: 17rem !important;
+  height: 2.5rem;
+  text-align: start;
+}
+
+.range {
+  max-width: 34rem;
+}
+
+.dropDownItem {
+  display: inline-block;
+  padding: 0rem 0.5rem;
+  margin: 0 0.5rem;
+  border: 1px solid rgba(25, 135, 84, 0.2);
+  border-radius: 0.2rem;
+}
