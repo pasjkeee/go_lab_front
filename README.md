@@ -4,8 +4,9 @@ NodeJS install https://nodejs.org/en/
 
 ## To start
 
-npm i
-npm start
+```npm i```
+
+```npm start```
 
 ## Available Scripts
 
