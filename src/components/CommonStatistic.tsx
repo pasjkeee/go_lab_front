@@ -2,6 +2,7 @@ import { Dispatch, FunctionComponent } from "react";
 import { ResultUsers } from "../service/userService";
 import CommonStatisticUsers from "./CommonStatisticUsers";
 import FromUser2User from "./FromUser2User";
+import Pdf from "./Pdf";
 import styles from "./styles/CommonStatistic.module.css";
 
 interface CommonStatisticProps {

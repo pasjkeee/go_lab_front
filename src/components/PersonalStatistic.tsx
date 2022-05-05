@@ -1,4 +1,5 @@
 import axios from "axios";
+import { randomUUID } from "crypto";
 import {
   Fragment,
   FunctionComponent,
@@ -13,6 +14,7 @@ import {
   AuthDataContext,
   AuthDispatchContext,
 } from "../providers/authProvider";
+import { SocketDataContext } from "../providers/socketProvider";
 import { logOut } from "../service/commonService";
 import {
   fetchWallets,
@@ -22,7 +24,8 @@ import {
   WalletTransaction,
 } from "../service/userService";
 import styles from "./styles/PersonalStatistic.module.css";
-
+import { v4 as uuidv4 } from "uuid";
+import Pdf from "./Pdf";
 interface PersonalStatisticProps {
   choosedUser: ResultUsers | null;
 }
@@ -44,6 +47,26 @@ const PersonalStatistic: FunctionComponent<PersonalStatisticProps> = ({
   >(null);
   const dispatch = useContext(AuthDispatchContext);
   const dataContext = useContext(AuthDataContext);
+
+  const { conn } = useContext(SocketDataContext);
+
+  const createPdf = () => {
+    const createdPdf = {
+      type: "createPdf",
+      uuid: uuidv4(),
+      percent: 0,
+    };
+
+    conn && conn.send(JSON.stringify(createdPdf));
+  };
+
+  const startConn = () => {
+    const startedConn = {
+      type: "startConn",
+    };
+
+    conn && conn.send(JSON.stringify(startedConn));
+  };
 
   useEffect(() => {
     setChoosedWallet(null);
@@ -78,6 +101,24 @@ const PersonalStatistic: FunctionComponent<PersonalStatisticProps> = ({
 
   return (
     <div className={styles.container}>
+      <Button
+        onClick={() => {
+          startConn();
+        }}
+        variant="success"
+        style={{ marginRight: "1rem", marginBottom: "1rem" }}
+      >
+        Start connection
+      </Button>
+      <Button
+        onClick={() => {
+          createPdf();
+        }}
+        style={{ marginBottom: "1rem" }}
+      >
+        Get pdf
+      </Button>
+      <br />
       <Button
         className={styles.btnTitle}
         variant="outline-secondary"
@@ -156,6 +197,7 @@ const PersonalStatistic: FunctionComponent<PersonalStatisticProps> = ({
           )}
         </div>
       )}
+      <Pdf />
     </div>
   );
 };
