@@ -26,6 +26,22 @@ export const auth = (
   });
 };
 
+export const signup = (
+  cancelToken: CancelToken,
+  login: string,
+  password: string
+) => {
+  return API.post(
+    "/signup",
+    { login, password },
+    {
+      cancelToken,
+    }
+  ).then((res: AxiosResponse<{ token: string; login: string }>) => {
+    return res.data;
+  });
+};
+
 export const logOut = (
   login: string,
   cancelToken: CancelToken,

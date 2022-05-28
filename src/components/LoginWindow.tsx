@@ -3,7 +3,7 @@ import { FunctionComponent, useContext, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { AuthDispatchContext } from "../providers/authProvider";
-import { auth } from "../service/commonService";
+import { auth, signup } from "../service/commonService";
 import styles from "./styles/LoginWindow.module.css";
 
 const LoginWindow: FunctionComponent = () => {
@@ -16,6 +16,19 @@ const LoginWindow: FunctionComponent = () => {
 
   const handleLogIn = () => {
     auth(axiousSource.token, login, password)
+      .then(({ token, login }) => {
+        if (dispatch) {
+          dispatch.setAuthHeader(token);
+          dispatch.setAuth(true);
+          dispatch.setLogin(login);
+          setAuth(token);
+        }
+      })
+      .catch((e) => console.warn(e));
+  };
+
+  const handleSignUp = () => {
+    signup(axiousSource.token, login, password)
       .then(({ token, login }) => {
         if (dispatch) {
           dispatch.setAuthHeader(token);
@@ -60,7 +73,16 @@ const LoginWindow: FunctionComponent = () => {
             handleLogIn();
           }}
         >
-          Submit
+          Login
+        </Button>
+        <Button
+          variant="primary"
+          onClick={(e) => {
+            e.preventDefault();
+            handleSignUp();
+          }}
+        >
+          Signup
         </Button>
       </Form>
     </div>
